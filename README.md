@@ -1,5 +1,9 @@
 # TrendPilot — Trend-Driven Social Media Marketing SaaS
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frhoni266%2Ftrendpilot)
+[![CI Status](https://github.com/rhoni266/trendpilot/actions/workflows/ci.yml/badge.svg)](https://github.com/rhoni266/trendpilot/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 > **A production-minded, multi-tenant SaaS marketing platform that researches rolling 7-day social media trends, learns a business's products and unique selling propositions (USPs), and orchestrates an adaptive, rolling 30-day marketing content calendar with images and platform-ready copy.**
 
 ---
