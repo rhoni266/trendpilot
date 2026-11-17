@@ -1,0 +1,3158 @@
+{
+  "tenants": [
+    {
+      "id": "tenant_kopicraft_01",
+      "name": "KopiCraft Artisan Roasters",
+      "slug": "kopicraft-my",
+      "plan": "GROWTH",
+      "status": "ACTIVE",
+      "timezone": "Asia/Kuala_Lumpur",
+      "defaultLanguage": "ms-MY_en",
+      "autoPostEnabled": false,
+      "probationEndsAt": "2026-12-01T13:29:55.915Z",
+      "maxDailyPosts": 3,
+      "allowedPostDays": [
+        "MON",
+        "TUE",
+        "WED",
+        "THU",
+        "FRI",
+        "SAT",
+        "SUN"
+      ],
+      "allowedTimeWindows": [
+        {
+          "start": "09:00",
+          "end": "12:00"
+        },
+        {
+          "start": "14:00",
+          "end": "18:00"
+        },
+        {
+          "start": "20:00",
+          "end": "22:00"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "user_owner_01",
+      "email": "sarah@kopicraft.my",
+      "name": "Sarah Lim (Lead Roaster & Founder)",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "memberships": [
+    {
+      "id": "mem_01",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "role": "BUSINESS_ADMIN",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "businessProfiles": [
+    {
+      "id": "profile_01",
+      "tenantId": "tenant_kopicraft_01",
+      "industry": "Specialty Coffee Roastery & F&B Retail",
+      "location": "Bangsar, Kuala Lumpur, Malaysia",
+      "website": "https://kopicraft.my",
+      "contactEmail": "hello@kopicraft.my",
+      "phone": "+60 3-2284 8899",
+      "summary": "Independent specialty coffee roastery pioneering micro-lot Johor Liberica and ethical single-origin beans, roasted fresh in small batches in Bangsar.",
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod_liberica_01",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "KopiCraft Signature Johor Liberica (250g)",
+      "category": "Single Origin Whole Beans",
+      "description": "Rare micro-lot Liberica from Kulai, Johor. Distinct floral jasmine aroma with sweet jackfruit and dark cocoa finish.",
+      "price": "RM 48.00",
+      "features": [
+        "100% Kulai Johor high-elevation Liberica",
+        "Medium roast for balanced sweetness",
+        "Roasted weekly in small 12kg drum batches"
+      ],
+      "benefits": [
+        "Naturally low acidity cup that is gentle on sensitive stomachs",
+        "Celebrates authentic Malaysian heritage coffee with third-wave craftsmanship",
+        "Direct trade ensures ethical farmer wages (+25% above fair trade benchmark)"
+      ],
+      "differentiators": [
+        "First specialty roaster to earn SCA cupping score 85+ for Malaysian Liberica",
+        "Guaranteed roast date stamped on every valve bag"
+      ],
+      "isActive": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "prod_coldbrew_02",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Barista Nitro-Steeped Cold Brew (500ml)",
+      "category": "Ready to Drink / Concentrate",
+      "description": "18-hour cold drip extraction using Sumatra Gayo and Johor Liberica. Silky, chocolatey, zero bitter bite.",
+      "price": "RM 38.00",
+      "features": [
+        "18-hour cold drip extraction",
+        "1:2 dilution ratio (yields 6-8 glasses)",
+        "Zero added sugars, no preservatives"
+      ],
+      "benefits": [
+        "Instant cafe-quality iced latte at your office desk",
+        "Smooth natural sweetness without syrup"
+      ],
+      "differentiators": [
+        "Filtered with quadruple micro-mesh to eliminate all sediment and bitterness"
+      ],
+      "isActive": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "prod_dripper_03",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Artisan Ceramic Pour-Over Dripper Set",
+      "category": "Brewing Equipment",
+      "description": "Locally handcrafted ceramic dripper with 12 interior spiral ribs designed for optimal extraction flow rate.",
+      "price": "RM 85.00",
+      "features": [
+        "Handcrafted Malaysian stoneware",
+        "Custom spiral extraction ribs",
+        "Includes 40 unbleached filters"
+      ],
+      "benefits": [
+        "Even water saturation eliminates channeling",
+        "Retains brew heat 30% longer than plastic drippers"
+      ],
+      "differentiators": [
+        "Collaborative design with homegrown ceramic atelier in Petaling Jaya"
+      ],
+      "isActive": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "productUSPs": [
+    {
+      "id": "usp_01",
+      "productId": "prod_liberica_01",
+      "title": "Direct Johor Farmer Micro-Lot Partnership",
+      "description": "We work directly with 12 multi-generation smallholder farming families in Kulai, Johor.",
+      "proofPoint": "Direct trade contract certificates and batch QR code linking directly to farm coordinates.",
+      "isVerified": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "usp_02",
+      "productId": "prod_liberica_01",
+      "title": "Freshness Guaranteed: 48-Hour Roast-to-Pouch",
+      "description": "Every order is packed and dispatched within 48 hours of being roasted.",
+      "proofPoint": "Roast date handwritten and heat-embossed on each package.",
+      "isVerified": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "usp_03",
+      "productId": "prod_coldbrew_02",
+      "title": "18-Hour Nitrogen Cold Steep Process",
+      "description": "Slow-steeped under nitrogen blanket to preserve delicate volatile aromas without oxidation.",
+      "proofPoint": "Lab-tested zero oxidation and shelf-life of 28 days refrigerated without additives.",
+      "isVerified": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "audiencePersonas": [
+    {
+      "id": "persona_01",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Urban Coffee Explorer (Afiq & Chloe)",
+      "ageRange": "24-38",
+      "painPoints": [
+        "Tired of burnt, bitter commercial chain coffee",
+        "Wants to support genuine Malaysian craft but finds specialty beans intimidating",
+        "Values aesthetic packaging and transparent sourcing"
+      ],
+      "motivations": [
+        "Experiencing unique regional flavor profiles",
+        "Weekend café hopping & home brewing ritual"
+      ],
+      "preferredPlatforms": [
+        "INSTAGRAM",
+        "THREADS",
+        "TIKTOK"
+      ],
+      "preferredLanguages": [
+        "English",
+        "Bahasa Malaysia (Campur/Manglish friendly)"
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "persona_02",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Busy WFH Professional / Office Team Lead (Mei Ling)",
+      "ageRange": "28-45",
+      "painPoints": [
+        "Needs quick high-grade coffee between back-to-back Zoom meetings",
+        "Frustrated by mediocre instant coffee pods and mess of grounds during busy workdays"
+      ],
+      "motivations": [
+        "Convenience without compromising premium artisan taste",
+        "Team pantry coffee upgrades"
+      ],
+      "preferredPlatforms": [
+        "INSTAGRAM",
+        "FACEBOOK",
+        "THREADS"
+      ],
+      "preferredLanguages": [
+        "English",
+        "Bahasa Malaysia"
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "brandVoices": [
+    {
+      "id": "bvoice_01",
+      "tenantId": "tenant_kopicraft_01",
+      "tone": "Warm, passionate, knowledgeable, approachable, proud Malaysian heritage (Bukan snob kopi!)",
+      "personalityTraits": [
+        "Artisan Roaster",
+        "Friendly Barista Kakak/Abang",
+        "Coffee Lore Enthusiast",
+        "Community Builder"
+      ],
+      "wordsToUse": [
+        "Aromatik",
+        "Freshly roasted",
+        "Johor Liberica",
+        "Kulai micro-lot",
+        "Nikmat sebenar",
+        "Craft batch",
+        "Sapot lokal",
+        "Notes of jackfruit & chocolate"
+      ],
+      "wordsToAvoid": [
+        "Cheap coffee",
+        "Instant fix",
+        "Miracle cure",
+        "Bitterest bean",
+        "Burned roast",
+        "Fake syrup"
+      ],
+      "mixedLanguageAllowed": true,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "brandAssets": [],
+  "knowledgeDocuments": [],
+  "knowledgeFacts": [
+    {
+      "id": "fact_01",
+      "tenantId": "tenant_kopicraft_01",
+      "claim": "All KopiCraft beans are sourced directly from Kulai, Johor with +25% premium paid above fair-trade benchmark.",
+      "category": "Sourcing & Ethics",
+      "verificationStatus": "VERIFIED",
+      "verifiedAt": "2026-11-17T13:29:55.915Z",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "fact_02",
+      "tenantId": "tenant_kopicraft_01",
+      "claim": "Roasting takes place every Tuesday and Friday in our Bangsar roastery using a cast-iron drum roaster.",
+      "category": "Production Schedule",
+      "verificationStatus": "VERIFIED",
+      "verifiedAt": "2026-11-17T13:29:55.915Z",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "fact_03",
+      "tenantId": "tenant_kopicraft_01",
+      "claim": "Johor Liberica variety naturally has lower titratable acidity than standard Robusta and Arabica varieties.",
+      "category": "Product Science",
+      "verificationStatus": "VERIFIED",
+      "verifiedAt": "2026-11-17T13:29:55.915Z",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "fact_04",
+      "tenantId": "tenant_kopicraft_01",
+      "claim": "Upcoming subscription service planned to launch at 15% discount in Q1 2027.",
+      "category": "Roadmap",
+      "verificationStatus": "UNVERIFIED_NEEDS_PROOF",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "approvedClaims": [],
+  "restrictedTopics": [
+    {
+      "id": "rest_01",
+      "tenantId": "tenant_kopicraft_01",
+      "topic": "Political elections, party endorsements, or boycott campaigns",
+      "reason": "Brand policy strictly prohibits political alignment or exploitation of public political debates.",
+      "severity": "HARD_BLOCK",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "rest_02",
+      "tenantId": "tenant_kopicraft_01",
+      "topic": "Medical or disease-curing claims about coffee",
+      "reason": "Regulatory advertising laws in Malaysia prohibit unsupported medicinal claims for food & beverage products.",
+      "severity": "HARD_BLOCK",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "rest_03",
+      "tenantId": "tenant_kopicraft_01",
+      "topic": "Aggressive competitor disparagement (naming other cafes negatively)",
+      "reason": "Our brand voice focuses on elevating local coffee culture respectfully, not tearing competitors down.",
+      "severity": "HARD_BLOCK",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "socialAccounts": [
+    {
+      "id": "acc_ig_01",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "INSTAGRAM",
+      "accountName": "@kopicraft.my",
+      "externalAccountId": "ig_act_982341201",
+      "autoPostEnabled": false,
+      "status": "CONNECTED",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "acc_tt_02",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "TIKTOK",
+      "accountName": "@kopicraft.official",
+      "externalAccountId": "tt_act_748291039",
+      "autoPostEnabled": false,
+      "status": "CONNECTED",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "acc_th_03",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "THREADS",
+      "accountName": "@kopicraft.my",
+      "externalAccountId": "th_act_102938475",
+      "autoPostEnabled": false,
+      "status": "CONNECTED",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "acc_fb_04",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "FACEBOOK",
+      "accountName": "KopiCraft Artisan Roasters",
+      "externalAccountId": "fb_page_593820194",
+      "autoPostEnabled": false,
+      "status": "CONNECTED",
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "platformCapabilities": [
+    {
+      "id": "cap_ig",
+      "platform": "INSTAGRAM",
+      "supportsTrends": true,
+      "supportsPublishing": true,
+      "supportsScheduledPublishing": true,
+      "supportsAnalytics": true,
+      "tier": "OFFICIAL_GRAPH_API"
+    },
+    {
+      "id": "cap_tt",
+      "platform": "TIKTOK",
+      "supportsTrends": true,
+      "supportsPublishing": true,
+      "supportsScheduledPublishing": true,
+      "supportsAnalytics": true,
+      "tier": "MOCK_DEMO"
+    },
+    {
+      "id": "cap_th",
+      "platform": "THREADS",
+      "supportsTrends": true,
+      "supportsPublishing": true,
+      "supportsScheduledPublishing": true,
+      "supportsAnalytics": true,
+      "tier": "OFFICIAL_GRAPH_API"
+    },
+    {
+      "id": "cap_fb",
+      "platform": "FACEBOOK",
+      "supportsTrends": true,
+      "supportsPublishing": true,
+      "supportsScheduledPublishing": true,
+      "supportsAnalytics": true,
+      "tier": "OFFICIAL_GRAPH_API"
+    }
+  ],
+  "trendSignals": [
+    {
+      "id": "trend_farm_to_cup",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "INSTAGRAM",
+      "title": "#SapotLokal Single-Origin Coffee Origin Stories",
+      "summary": "Surge in Southeast Asian coffee drinkers wanting to know the exact estate, farmer name, and altitude of their morning brew. High engagement on reels showing real farm harvesting.",
+      "category": "EMERGING_TOPIC",
+      "firstObservedAt": "2026-11-13T13:29:55.915Z",
+      "lastObservedAt": "2026-11-16T13:29:55.915Z",
+      "sourceUrl": "https://instagram.com/explore/tags/sapotlokalcoffee",
+      "engagementMetrics": {
+        "views": 840000,
+        "likes": 62000,
+        "shares": 14200,
+        "growthRate": "+64% vs last week",
+        "velocityScore": 89
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "createdAt": "2026-11-13T13:29:55.915Z",
+      "scores": {
+        "id": "score_01",
+        "trendSignalId": "trend_farm_to_cup",
+        "tenantId": "tenant_kopicraft_01",
+        "recencyScore": 92,
+        "momentumScore": 88,
+        "businessRelevanceScore": 98,
+        "audienceFitScore": 94,
+        "platformFitScore": 90,
+        "brandFitScore": 96,
+        "commercialUsefulnessScore": 92,
+        "compositeScore": 94.2,
+        "explanation": "Extremely strong fit. Directly matches KopiCraft's core USP of Kulai Johor micro-lot direct trade. Audiences in KL are actively engaging with ethical origin storytelling.",
+        "matchedProductIds": [
+          "prod_liberica_01"
+        ],
+        "matchedUSPIds": [
+          "usp_01"
+        ],
+        "suggestedAngle": "Take followers behind the scenes with Uncle Tan in Kulai — show the distinct giant Liberica cherries and explain why our direct trade puts RM directly into farmers' hands.",
+        "calculatedAt": "2026-11-16T13:29:55.915Z"
+      }
+    },
+    {
+      "id": "trend_coldbrew_mocktails",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "TIKTOK",
+      "title": "Refreshing Cold Brew Spritz & Tropical Mocktails",
+      "summary": "Creators sharing easy 2-minute afternoon mocktails mixing cold brew concentrate with tonic, calamansi, and sparkling soda to beat the humid 34°C afternoon heat.",
+      "category": "POPULAR_FORMAT",
+      "firstObservedAt": "2026-11-14T13:29:55.915Z",
+      "lastObservedAt": "2026-11-16T13:29:55.915Z",
+      "sourceUrl": "https://tiktok.com/tag/coldbrewmocktail",
+      "engagementMetrics": {
+        "views": 1250000,
+        "likes": 110000,
+        "shares": 38000,
+        "growthRate": "+82%",
+        "velocityScore": 95
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "createdAt": "2026-11-14T13:29:55.915Z",
+      "scores": {
+        "id": "score_02",
+        "trendSignalId": "trend_coldbrew_mocktails",
+        "tenantId": "tenant_kopicraft_01",
+        "recencyScore": 95,
+        "momentumScore": 94,
+        "businessRelevanceScore": 90,
+        "audienceFitScore": 92,
+        "platformFitScore": 96,
+        "brandFitScore": 88,
+        "commercialUsefulnessScore": 95,
+        "compositeScore": 92.4,
+        "explanation": "High commercial viability. Connects perfectly to Barista Nitro Cold Brew concentrate. Highly shareable DIY recipe format popular among urban office workers.",
+        "matchedProductIds": [
+          "prod_coldbrew_02"
+        ],
+        "matchedUSPIds": [
+          "usp_03"
+        ],
+        "suggestedAngle": "15-second recipe reel: 'The Bangsar Calamansi Cold Brew Tonic' using 50ml KopiCraft concentrate + fresh calamansi + tonic water.",
+        "calculatedAt": "2026-11-16T13:29:55.915Z"
+      }
+    },
+    {
+      "id": "trend_coffee_myths",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "THREADS",
+      "title": "Debunking 'Dark Roast Has More Caffeine' Myth",
+      "summary": "Viral discussion thread on caffeine extraction misconceptions. Educational content comparing bean densities and explaining why lighter roasts retain caffeine.",
+      "category": "AUDIENCE_QUESTION",
+      "firstObservedAt": "2026-11-15T13:29:55.915Z",
+      "lastObservedAt": "2026-11-16T13:29:55.915Z",
+      "sourceUrl": "https://threads.net/trending/topic/coffee-myths",
+      "engagementMetrics": {
+        "views": 420000,
+        "likes": 29000,
+        "shares": 8100,
+        "growthRate": "+41%",
+        "velocityScore": 82
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "createdAt": "2026-11-15T13:29:55.915Z",
+      "scores": {
+        "id": "score_03",
+        "trendSignalId": "trend_coffee_myths",
+        "tenantId": "tenant_kopicraft_01",
+        "recencyScore": 90,
+        "momentumScore": 82,
+        "businessRelevanceScore": 86,
+        "audienceFitScore": 88,
+        "platformFitScore": 94,
+        "brandFitScore": 95,
+        "commercialUsefulnessScore": 84,
+        "compositeScore": 87.8,
+        "explanation": "Establishes KopiCraft's authority as craft roasters. Demystifies roast profiles without condescending jargon.",
+        "matchedProductIds": [
+          "prod_liberica_01"
+        ],
+        "matchedUSPIds": [
+          "usp_02"
+        ],
+        "suggestedAngle": "Punchy Threads carousel: 'Why that pitch-black roast isn't giving you more energy (and what's actually happening in the roaster)'.",
+        "calculatedAt": "2026-11-16T13:29:55.915Z"
+      }
+    },
+    {
+      "id": "trend_boycott_controversy",
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "TIKTOK",
+      "title": "Partisan Political Boycott Debates",
+      "summary": "Polarizing comment wars around political party affiliations and boycott lists targeting multinational retail chains.",
+      "category": "EMERGING_TOPIC",
+      "firstObservedAt": "2026-11-12T13:29:55.915Z",
+      "lastObservedAt": "2026-11-15T13:29:55.915Z",
+      "sourceUrl": "https://tiktok.com/tag/politicsmy",
+      "engagementMetrics": {
+        "views": 3100000,
+        "likes": 210000,
+        "growthRate": "+120%",
+        "velocityScore": 98
+      },
+      "isExcluded": true,
+      "exclusionReason": "Violates ethical and brand safety policy: Prohibited political controversy & commercial exploitation of conflict.",
+      "safetyStatus": "BLOCKED",
+      "safetyNotes": "Excluded by Safety Hard Gate. No promotional tie-in or opportunistic commentary allowed.",
+      "createdAt": "2026-11-12T13:29:55.915Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "TIKTOK",
+      "title": "Cold Brew Calamansi Mocktail Hacks",
+      "summary": "Trending Malaysian DIY beverage creators pairing chilled cold brew with sparkling soda and local calamansi.",
+      "category": "POPULAR_FORMAT",
+      "firstObservedAt": "2026-11-14T13:33:27.264Z",
+      "lastObservedAt": "2026-11-16T13:33:27.264Z",
+      "sourceUrl": "https://tiktok.com/tag/coldbrewmocktail",
+      "engagementMetrics": {
+        "views": 1250000,
+        "likes": 110000,
+        "shares": 38000,
+        "growthRate": "+82%",
+        "velocityScore": 95
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "id": "trend_1794922407264",
+      "createdAt": "2026-11-17T13:33:27.264Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "TIKTOK",
+      "title": "Behind-The-Roaster ASMR Bean Drop",
+      "summary": "High engagement audio format showcasing the hypnotic sound of roasted beans cooling in commercial drums.",
+      "category": "POPULAR_FORMAT",
+      "firstObservedAt": "2026-11-14T13:33:27.264Z",
+      "lastObservedAt": "2026-11-16T13:33:27.264Z",
+      "sourceUrl": "https://tiktok.com/tag/coffeeasmr",
+      "engagementMetrics": {
+        "views": 890000,
+        "likes": 74000,
+        "shares": 12000,
+        "growthRate": "+45%",
+        "velocityScore": 84
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "id": "trend_1794922407266",
+      "createdAt": "2026-11-17T13:33:27.266Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "platform": "FACEBOOK",
+      "title": "Malaysian Artisan Food & Coffee Roasters Community Spotlight",
+      "summary": "Local business communities sharing sustainable sourcing stories and Klang Valley home delivery recommendations.",
+      "category": "INDUSTRY_NEWS",
+      "firstObservedAt": "2026-11-14T13:33:27.278Z",
+      "lastObservedAt": "2026-11-16T13:33:27.278Z",
+      "sourceUrl": "https://facebook.com/groups/klcoffeelovers",
+      "engagementMetrics": {
+        "views": 310000,
+        "likes": 18400,
+        "shares": 3200,
+        "growthRate": "+28%",
+        "velocityScore": 72
+      },
+      "isExcluded": false,
+      "safetyStatus": "PASS",
+      "id": "trend_1794922407278",
+      "createdAt": "2026-11-17T13:33:27.278Z"
+    }
+  ],
+  "trendScores": [
+    {
+      "id": "score_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "tenantId": "tenant_kopicraft_01",
+      "recencyScore": 92,
+      "momentumScore": 88,
+      "businessRelevanceScore": 98,
+      "audienceFitScore": 94,
+      "platformFitScore": 90,
+      "brandFitScore": 96,
+      "commercialUsefulnessScore": 92,
+      "compositeScore": 94.2,
+      "explanation": "Extremely strong fit. Directly matches KopiCraft's core USP of Kulai Johor micro-lot direct trade. Audiences in KL are actively engaging with ethical origin storytelling.",
+      "matchedProductIds": [
+        "prod_liberica_01"
+      ],
+      "matchedUSPIds": [
+        "usp_01"
+      ],
+      "suggestedAngle": "Take followers behind the scenes with Uncle Tan in Kulai — show the distinct giant Liberica cherries and explain why our direct trade puts RM directly into farmers' hands.",
+      "calculatedAt": "2026-11-16T13:29:55.915Z"
+    },
+    {
+      "id": "score_02",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "tenantId": "tenant_kopicraft_01",
+      "recencyScore": 95,
+      "momentumScore": 94,
+      "businessRelevanceScore": 90,
+      "audienceFitScore": 92,
+      "platformFitScore": 96,
+      "brandFitScore": 88,
+      "commercialUsefulnessScore": 95,
+      "compositeScore": 92.4,
+      "explanation": "High commercial viability. Connects perfectly to Barista Nitro Cold Brew concentrate. Highly shareable DIY recipe format popular among urban office workers.",
+      "matchedProductIds": [
+        "prod_coldbrew_02"
+      ],
+      "matchedUSPIds": [
+        "usp_03"
+      ],
+      "suggestedAngle": "15-second recipe reel: 'The Bangsar Calamansi Cold Brew Tonic' using 50ml KopiCraft concentrate + fresh calamansi + tonic water.",
+      "calculatedAt": "2026-11-16T13:29:55.915Z"
+    },
+    {
+      "id": "score_03",
+      "trendSignalId": "trend_coffee_myths",
+      "tenantId": "tenant_kopicraft_01",
+      "recencyScore": 90,
+      "momentumScore": 82,
+      "businessRelevanceScore": 86,
+      "audienceFitScore": 88,
+      "platformFitScore": 94,
+      "brandFitScore": 95,
+      "commercialUsefulnessScore": 84,
+      "compositeScore": 87.8,
+      "explanation": "Establishes KopiCraft's authority as craft roasters. Demystifies roast profiles without condescending jargon.",
+      "matchedProductIds": [
+        "prod_liberica_01"
+      ],
+      "matchedUSPIds": [
+        "usp_02"
+      ],
+      "suggestedAngle": "Punchy Threads carousel: 'Why that pitch-black roast isn't giving you more energy (and what's actually happening in the roaster)'.",
+      "calculatedAt": "2026-11-16T13:29:55.915Z"
+    }
+  ],
+  "contentPillars": [
+    {
+      "id": "pillar_edu",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Coffee Lore & Craft Education",
+      "targetPercentage": 30,
+      "description": "Demystifying brewing, Liberica heritage, roast science, and tasting notes in friendly, unpretentious language."
+    },
+    {
+      "id": "pillar_origin",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Farm to Cup & Origin Stories",
+      "targetPercentage": 25,
+      "description": "Spotlighting Kulai farmers, micro-lot harvests, ethical direct-trade pricing, and bean traceability."
+    },
+    {
+      "id": "pillar_recipes",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Barista Hacks & Home Recipes",
+      "targetPercentage": 25,
+      "description": "Fast, mouthwatering recipes (Cold brew mocktails, pour-over hacks, iced lattes) driving concentrate and equipment sales."
+    },
+    {
+      "id": "pillar_community",
+      "tenantId": "tenant_kopicraft_01",
+      "name": "Bangsar Roastery & Community Vibe",
+      "targetPercentage": 20,
+      "description": "Behind the scenes at roast day, customer stories, cafe popups, and answering barista questions."
+    }
+  ],
+  "contentIdeas": [],
+  "contentPosts": [
+    {
+      "id": "post_0",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Behind the Roaster: Kulai Liberica Drop Day",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_0",
+          "postId": "post_0",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_0",
+          "postId": "post_0",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_0",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_0",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_1",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_coldbrew_02",
+      "pillarId": "pillar_recipes",
+      "title": "Calamansi Cold Brew Fizz Recipe",
+      "masterHook": "Cuaca panas KL ni, jangan minum kopi biasa yang pekat melekit. Try this 2-minute mocktail!",
+      "masterCaption": "When it's 34°C in Bangsar, our 18-Hour Barista Cold Brew Concentrate + sparkling tonic + fresh calamansi is the ultimate afternoon revival. No bitterness, zero added sugar, just pure chocolatey citrus bliss.",
+      "masterCta": "Grab a 500ml bottle at the link in bio — makes 8 refreshing glasses at home!",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "APPROVED",
+      "scheduledFor": "2026-11-18T11:30:00",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_1",
+          "postId": "post_1",
+          "platform": "INSTAGRAM",
+          "hook": "Cuaca panas KL ni, jangan minum kopi biasa yang pekat melekit. Try this 2-minute mocktail!",
+          "caption": "When it's 34°C in Bangsar, our 18-Hour Barista Cold Brew Concentrate + sparkling tonic + fresh calamansi is the ultimate afternoon revival. No bitterness, zero added sugar, just pure chocolatey citrus bliss.\n\nGrab a 500ml bottle at the link in bio — makes 8 refreshing glasses at home!",
+          "callToAction": "Grab a 500ml bottle at the link in bio — makes 8 refreshing glasses at home!",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_1",
+          "postId": "post_1",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_1",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_1",
+          "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_2",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Mythbuster: Does Dark Roast Have More Kick?",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "APPROVED",
+      "scheduledFor": "2026-11-19T11:30:00",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_2",
+          "postId": "post_2",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_2",
+          "postId": "post_2",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_2",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_2",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_3",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_coldbrew_02",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #4",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "NEEDS_REVIEW",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_3",
+          "postId": "post_3",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_3",
+          "postId": "post_3",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_3",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_3",
+          "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_4",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "The Rise of Rare Liberica in Global Coffee Competitions",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "REPLACEMENT_PROPOSED",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_4",
+          "postId": "post_4",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_4",
+          "postId": "post_4",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_4",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_4",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_5",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_coldbrew_02",
+      "pillarId": "pillar_recipes",
+      "title": "Artisan Coffee Moment #6",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_5",
+          "postId": "post_5",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_5",
+          "postId": "post_5",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_5",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_5",
+          "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_6",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #7",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_6",
+          "postId": "post_6",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_6",
+          "postId": "post_6",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_6",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_6",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_8",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #9",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_8",
+          "postId": "post_8",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_8",
+          "postId": "post_8",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_8",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_8",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_10",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #11",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_10",
+          "postId": "post_10",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_10",
+          "postId": "post_10",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_10",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_10",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_12",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #13",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_12",
+          "postId": "post_12",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_12",
+          "postId": "post_12",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_12",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_12",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_14",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #15",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_14",
+          "postId": "post_14",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_14",
+          "postId": "post_14",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_14",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_14",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_16",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #17",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_16",
+          "postId": "post_16",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_16",
+          "postId": "post_16",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_16",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_16",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_18",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #19",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_18",
+          "postId": "post_18",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_18",
+          "postId": "post_18",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_18",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_18",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_20",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #21",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_20",
+          "postId": "post_20",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_20",
+          "postId": "post_20",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_20",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_20",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_22",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #23",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_22",
+          "postId": "post_22",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_22",
+          "postId": "post_22",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_22",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_22",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_24",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_farm_to_cup",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #25",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_24",
+          "postId": "post_24",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_24",
+          "postId": "post_24",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_24",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_24",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_26",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coffee_myths",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_edu",
+      "title": "Artisan Coffee Moment #27",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_26",
+          "postId": "post_26",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_26",
+          "postId": "post_26",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_26",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_26",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_28",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_liberica_01",
+      "pillarId": "pillar_origin",
+      "title": "Artisan Coffee Moment #29",
+      "masterHook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "masterCaption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.",
+      "masterCta": "Link in bio to reserve this week's fresh batch.",
+      "visualBrief": "Clean studio top-down shot of condensation-covered glass with calamansi slice, next to minimalist amber bottle of KopiCraft Cold Brew.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "FORECAST",
+      "isDeleted": false,
+      "variants": [
+        {
+          "id": "var_ig_post_28",
+          "postId": "post_28",
+          "platform": "INSTAGRAM",
+          "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+          "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+          "callToAction": "Link in bio to reserve this week's fresh batch.",
+          "hashtags": [
+            "#KopiCraft",
+            "#BangsarRoastery",
+            "#JohorLiberica",
+            "#SpecialtyCoffeeMY",
+            "#SapotLokalCoffee"
+          ],
+          "aspectRatio": "1:1",
+          "characterCount": 380
+        },
+        {
+          "id": "var_tt_post_28",
+          "postId": "post_28",
+          "platform": "TIKTOK",
+          "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+          "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+          "callToAction": "Order link on profile!",
+          "hashtags": [
+            "#coffeetiktok",
+            "#malaysiacoffee",
+            "#coldbrewrecipe",
+            "#fypkl"
+          ],
+          "aspectRatio": "9:16",
+          "characterCount": 160
+        }
+      ],
+      "mediaAssets": [
+        {
+          "id": "media_post_28",
+          "tenantId": "tenant_kopicraft_01",
+          "postId": "post_28",
+          "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+          "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+          "aspectRatio": "1:1",
+          "version": 1,
+          "createdAt": "2026-11-17T13:29:55.915Z"
+        }
+      ],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "post_replacement_demo",
+      "tenantId": "tenant_kopicraft_01",
+      "trendSignalId": "trend_coldbrew_mocktails",
+      "productId": "prod_coldbrew_02",
+      "pillarId": "pillar_recipes",
+      "title": "⚡ Trend Replacement: Tropical Cold Brew Spritz for 34°C Heatwave",
+      "masterHook": "Cuaca panas terik harini? Jump into the viral Cold Brew Calamansi Spritz trend!",
+      "masterCaption": "Captured right from this week's trending #coldbrewmocktail wave (+82% momentum). We pair our 18-hour cold steeped concentrate with sparkling water and fresh calamansi for a 0-sugar afternoon boost.",
+      "masterCta": "Limited stock of this week's cold brew batch available online now.",
+      "visualBrief": "Bright, sunlit aesthetic of glass tumbler with effervescent bubbles, floating calamansi wheels, and deep rich coffee separation.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "REPLACEMENT_PROPOSED",
+      "isDeleted": false,
+      "variants": [],
+      "mediaAssets": [],
+      "createdAt": "2026-11-17T13:29:55.915Z",
+      "updatedAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "title": "Hard-Sell Special Discount Promo",
+      "masterHook": "Get 50% off right now!",
+      "masterCaption": "Limited time discount on our coffee beans.",
+      "masterCta": "Buy now before it's gone!",
+      "visualBrief": "Big discount badge over coffee bag.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "DELETED",
+      "isDeleted": true,
+      "id": "post_1794922195928",
+      "variants": [],
+      "mediaAssets": [],
+      "createdAt": "2026-11-17T13:29:55.928Z",
+      "updatedAt": "2026-11-17T13:29:55.928Z",
+      "deletedAt": "2026-11-17T13:29:55.933Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "title": "Hard-Sell Special Discount Promo",
+      "masterHook": "Get 50% off right now!",
+      "masterCaption": "Limited time discount on our coffee beans.",
+      "masterCta": "Buy now before it's gone!",
+      "visualBrief": "Big discount badge over coffee bag.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "DELETED",
+      "isDeleted": true,
+      "id": "post_1794922320016",
+      "variants": [],
+      "mediaAssets": [],
+      "createdAt": "2026-11-17T13:32:00.016Z",
+      "updatedAt": "2026-11-17T13:32:00.016Z",
+      "deletedAt": "2026-11-17T13:32:00.020Z"
+    }
+  ],
+  "contentVariants": [
+    {
+      "id": "var_ig_post_0",
+      "postId": "post_0",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_0",
+      "postId": "post_0",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_1",
+      "postId": "post_1",
+      "platform": "INSTAGRAM",
+      "hook": "Cuaca panas KL ni, jangan minum kopi biasa yang pekat melekit. Try this 2-minute mocktail!",
+      "caption": "When it's 34°C in Bangsar, our 18-Hour Barista Cold Brew Concentrate + sparkling tonic + fresh calamansi is the ultimate afternoon revival. No bitterness, zero added sugar, just pure chocolatey citrus bliss.\n\nGrab a 500ml bottle at the link in bio — makes 8 refreshing glasses at home!",
+      "callToAction": "Grab a 500ml bottle at the link in bio — makes 8 refreshing glasses at home!",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_1",
+      "postId": "post_1",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_2",
+      "postId": "post_2",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_2",
+      "postId": "post_2",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_3",
+      "postId": "post_3",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_3",
+      "postId": "post_3",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_4",
+      "postId": "post_4",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_4",
+      "postId": "post_4",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_5",
+      "postId": "post_5",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_5",
+      "postId": "post_5",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_6",
+      "postId": "post_6",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_6",
+      "postId": "post_6",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_8",
+      "postId": "post_8",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_8",
+      "postId": "post_8",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_10",
+      "postId": "post_10",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_10",
+      "postId": "post_10",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_12",
+      "postId": "post_12",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_12",
+      "postId": "post_12",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_14",
+      "postId": "post_14",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_14",
+      "postId": "post_14",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_16",
+      "postId": "post_16",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_16",
+      "postId": "post_16",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_18",
+      "postId": "post_18",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_18",
+      "postId": "post_18",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_20",
+      "postId": "post_20",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_20",
+      "postId": "post_20",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_22",
+      "postId": "post_22",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_22",
+      "postId": "post_22",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_24",
+      "postId": "post_24",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_24",
+      "postId": "post_24",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_26",
+      "postId": "post_26",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_26",
+      "postId": "post_26",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    },
+    {
+      "id": "var_ig_post_28",
+      "postId": "post_28",
+      "platform": "INSTAGRAM",
+      "hook": "Ramai ingat biji kopi Malaysia tak boleh compete dengan luar negara. Uncle Tan bukti sebaliknya.",
+      "caption": "Every Tuesday, we roast 12kg micro-batches of Kulai Liberica. Rare, floral, and naturally low in acidity. Stamped fresh with our 48-Hour roast guarantee.\n\nLink in bio to reserve this week's fresh batch.",
+      "callToAction": "Link in bio to reserve this week's fresh batch.",
+      "hashtags": [
+        "#KopiCraft",
+        "#BangsarRoastery",
+        "#JohorLiberica",
+        "#SpecialtyCoffeeMY",
+        "#SapotLokalCoffee"
+      ],
+      "aspectRatio": "1:1",
+      "characterCount": 380
+    },
+    {
+      "id": "var_tt_post_28",
+      "postId": "post_28",
+      "platform": "TIKTOK",
+      "hook": "Wait, stop scrolling! Ni cara buat iced cold brew fizz macam kat Bangsar cafe in 60s.",
+      "caption": "Bahan: 50ml KopiCraft cold brew + ice + tonic + calamansi. Save video ni untuk bila cuaca panas nanti! ☕✨",
+      "callToAction": "Order link on profile!",
+      "hashtags": [
+        "#coffeetiktok",
+        "#malaysiacoffee",
+        "#coldbrewrecipe",
+        "#fypkl"
+      ],
+      "aspectRatio": "9:16",
+      "characterCount": 160
+    }
+  ],
+  "mediaAssets": [
+    {
+      "id": "media_post_0",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_0",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_1",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_1",
+      "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_2",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_2",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_3",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_3",
+      "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_4",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_4",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_5",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_5",
+      "url": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_6",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_6",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_8",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_8",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_10",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_10",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_12",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_12",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_14",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_14",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_16",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_16",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_18",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_18",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_20",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_20",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_22",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_22",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_24",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_24",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_26",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_26",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "media_post_28",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_28",
+      "url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&auto=format&fit=crop&q=80",
+      "provider": "MockAI Visual Studio (Brand Asset Grounded)",
+      "aspectRatio": "1:1",
+      "version": 1,
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    }
+  ],
+  "contentVersions": [],
+  "calendarSlots": [
+    {
+      "id": "slot_0",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_0",
+      "targetDate": "2026-11-17",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_1",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_1",
+      "targetDate": "2026-11-18",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": false,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_2",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_2",
+      "targetDate": "2026-11-19",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": false,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_3",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_3",
+      "targetDate": "2026-11-20",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_4",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_4",
+      "targetDate": "2026-11-21",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": true,
+      "proposedReplacementPostId": "post_replacement_demo",
+      "replacementReason": "New 7-Day Trend: Rapid spike (+82%) in tropical cold brew recipes. Proposing to replace generic bean forecast with high-momentum Cold Brew Mocktail post to capture immediate seasonal demand."
+    },
+    {
+      "id": "slot_5",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_5",
+      "targetDate": "2026-11-22",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_6",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_6",
+      "targetDate": "2026-11-23",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_7",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-11-24",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_8",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_8",
+      "targetDate": "2026-11-25",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_9",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-11-26",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_10",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_10",
+      "targetDate": "2026-11-27",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_11",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-11-28",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_12",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_12",
+      "targetDate": "2026-11-29",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_13",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-11-30",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_14",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_14",
+      "targetDate": "2026-12-01",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_15",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-02",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_16",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_16",
+      "targetDate": "2026-12-03",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_17",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-04",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_18",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_18",
+      "targetDate": "2026-12-05",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_19",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-06",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_20",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_20",
+      "targetDate": "2026-12-07",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_21",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-08",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_22",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_22",
+      "targetDate": "2026-12-09",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_23",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-10",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_24",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_24",
+      "targetDate": "2026-12-11",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_25",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-12",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_26",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_26",
+      "targetDate": "2026-12-13",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_27",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-14",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_28",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_28",
+      "targetDate": "2026-12-15",
+      "slotTime": "11:30",
+      "platform": "INSTAGRAM",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    },
+    {
+      "id": "slot_29",
+      "tenantId": "tenant_kopicraft_01",
+      "targetDate": "2026-12-16",
+      "slotTime": "11:30",
+      "platform": "TIKTOK",
+      "isForecast": true,
+      "hasReplacementProposal": false
+    }
+  ],
+  "approvals": [],
+  "deletionFeedbacks": [
+    {
+      "id": "del_fb_1794922195933",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_1794922195928",
+      "reasonCategory": "TOO_PROMOTIONAL",
+      "reasonDetails": "Too salesy, doesn't match our craft artisan positioning.",
+      "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+      "userId": "user_owner_01",
+      "createdAt": "2026-11-17T13:29:55.933Z"
+    },
+    {
+      "id": "del_fb_1794922320020",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_1794922320016",
+      "reasonCategory": "TOO_PROMOTIONAL",
+      "reasonDetails": "Too salesy, doesn't match our craft artisan positioning.",
+      "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+      "userId": "user_owner_01",
+      "createdAt": "2026-11-17T13:32:00.020Z"
+    }
+  ],
+  "learningPreferences": [
+    {
+      "id": "pref_01",
+      "tenantId": "tenant_kopicraft_01",
+      "preferenceKey": "affinity_pillar_recipes",
+      "weight": 1.25,
+      "confidence": 0.85,
+      "sampleCount": 14,
+      "lastAdjustedAt": "2026-11-16T13:29:55.915Z",
+      "isUserOverridden": false
+    },
+    {
+      "id": "pref_02",
+      "tenantId": "tenant_kopicraft_01",
+      "preferenceKey": "tone_weight_playful_bilingual",
+      "weight": 1.15,
+      "confidence": 0.78,
+      "sampleCount": 10,
+      "lastAdjustedAt": "2026-11-16T13:29:55.915Z",
+      "isUserOverridden": false
+    },
+    {
+      "id": "pref_03",
+      "tenantId": "tenant_kopicraft_01",
+      "preferenceKey": "avoid_format_aggressive_discount",
+      "weight": 1,
+      "confidence": 0.9,
+      "sampleCount": 10,
+      "lastAdjustedAt": "2026-11-17T13:32:00.020Z",
+      "isUserOverridden": true
+    }
+  ],
+  "publishingJobs": [],
+  "postMetricSnapshots": [],
+  "notifications": [
+    {
+      "id": "notif_01",
+      "tenantId": "tenant_kopicraft_01",
+      "title": "New High-Relevance Trend Detected (94/100)",
+      "message": "The '#SapotLokal Single-Origin Coffee Origin' trend gained +64% momentum in Malaysia over the last 7 days. Matches your Kulai Liberica USP.",
+      "type": "HIGH_RELEVANCE_TREND",
+      "isRead": false,
+      "actionUrl": "/radar",
+      "createdAt": "2026-11-16T13:29:55.915Z"
+    },
+    {
+      "id": "notif_02",
+      "tenantId": "tenant_kopicraft_01",
+      "title": "30-Day Calendar: Replacement Proposal Available",
+      "message": "Day 5 forecast has a recommended replacement based on viral tropical cold brew mocktail trends. Review side-by-side comparison.",
+      "type": "REPLACEMENT_PROPOSAL",
+      "isRead": false,
+      "actionUrl": "/calendar",
+      "createdAt": "2026-11-16T13:29:55.915Z"
+    },
+    {
+      "id": "notif_03",
+      "tenantId": "tenant_kopicraft_01",
+      "title": "Content Awaiting Review",
+      "message": "2 forecast concepts have been generated and are ready for your review in Content Studio.",
+      "type": "POST_AWAITING_REVIEW",
+      "isRead": true,
+      "actionUrl": "/studio",
+      "createdAt": "2026-11-15T13:29:55.915Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "action": "TREND_SCAN_EXECUTED",
+      "entityType": "TrendSignal",
+      "entityId": "manual_scan_trigger",
+      "details": {
+        "newSignalsFound": 3,
+        "proposalsGenerated": 0,
+        "lookbackHours": 168
+      },
+      "id": "audit_1794922407306",
+      "createdAt": "2026-11-17T13:33:27.306Z"
+    },
+    {
+      "id": "audit_01",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "action": "TENANT_INITIALIZED",
+      "entityType": "Tenant",
+      "entityId": "tenant_kopicraft_01",
+      "details": {
+        "name": "KopiCraft Artisan Roasters",
+        "plan": "GROWTH",
+        "timezone": "Asia/Kuala_Lumpur"
+      },
+      "createdAt": "2026-11-17T13:29:55.915Z"
+    },
+    {
+      "id": "audit_02",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "action": "TREND_SCAN_COMPLETED",
+      "entityType": "TrendSignal",
+      "entityId": "batch_initial_scan",
+      "details": {
+        "signalsFound": 4,
+        "eligibleTrends": 3,
+        "blockedTrends": 1,
+        "lookbackHours": 168
+      },
+      "createdAt": "2026-11-16T13:29:55.915Z"
+    },
+    {
+      "id": "audit_1794922195934",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "action": "POST_DELETED_WITH_FEEDBACK",
+      "entityType": "ContentPost",
+      "entityId": "post_1794922195928",
+      "details": {
+        "reasonCategory": "TOO_PROMOTIONAL",
+        "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+        "postTitle": "Hard-Sell Special Discount Promo"
+      },
+      "createdAt": "2026-11-17T13:29:55.934Z"
+    },
+    {
+      "id": "audit_1794922320020",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "action": "POST_DELETED_WITH_FEEDBACK",
+      "entityType": "ContentPost",
+      "entityId": "post_1794922320016",
+      "details": {
+        "reasonCategory": "TOO_PROMOTIONAL",
+        "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+        "postTitle": "Hard-Sell Special Discount Promo"
+      },
+      "createdAt": "2026-11-17T13:32:00.020Z"
+    }
+  ]
+}

@@ -1,0 +1,589 @@
+﻿datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// -------------------------------------------------------------
+// 1. Multi-Tenancy, Users & Access Control
+// -------------------------------------------------------------
+
+model Tenant {
+  id                 String   @id @default(cuid())
+  name               String
+  slug               String   @unique
+  plan               String   @default("GROWTH") // FREE_TRIAL, GROWTH, ENTERPRISE
+  status             String   @default("ACTIVE") // ACTIVE, SUSPENDED, CANCELLED
+  timezone           String   @default("Asia/Kuala_Lumpur")
+  defaultLanguage    String   @default("ms-MY_en") // en, ms-MY, ms-MY_en
+  autoPostEnabled    Boolean  @default(false)
+  probationEndsAt    DateTime // 14-day probation period before auto-post can be enabled
+  maxDailyPosts      Int      @default(3)
+  allowedPostDays    String   @default("[\"MON\",\"TUE\",\"WED\",\"THU\",\"FRI\",\"SAT\",\"SUN\"]")
+  allowedTimeWindows String   @default("[{\"start\":\"09:00\",\"end\":\"21:00\"}]")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  memberships         Membership[]
+  businessProfile     BusinessProfile?
+  products            Product[]
+  audiencePersonas    AudiencePersona[]
+  brandVoice          BrandVoiceProfile?
+  brandAssets         BrandAsset[]
+  knowledgeDocuments  KnowledgeDocument[]
+  knowledgeFacts      KnowledgeFact[]
+  approvedClaims      ApprovedClaim[]
+  restrictedTopics    RestrictedTopic[]
+  socialAccounts      SocialAccount[]
+  trendSignals        TrendSignal[]
+  trendScores         TrendScore[]
+  contentPillars      ContentPillar[]
+  contentIdeas        ContentIdea[]
+  contentPosts        ContentPost[]
+  mediaAssets         MediaAsset[]
+  calendarSlots       CalendarSlot[]
+  deletionFeedbacks   DeletionFeedback[]
+  learningPreferences LearningPreference[]
+  publishingJobs      PublishingJob[]
+  notifications       Notification[]
+  auditLogs           AuditLog[]
+  aiUsageRecords      AIUsageRecord[]
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  memberships Membership[]
+}
+
+model Membership {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String
+  role      String   @default("BUSINESS_ADMIN") // SUPER_ADMIN, BUSINESS_ADMIN, MARKETING_MANAGER, VIEWER
+  createdAt DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, userId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  tenantId   String
+  userId     String?
+  action     String   // POST_APPROVED, POST_DELETED, PREFERENCE_RESET, AUTOPOST_TOGGLED, etc.
+  entityType String
+  entityId   String
+  details    String   // JSON string of metadata or diff
+  ipAddress  String?
+  createdAt  DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+// -------------------------------------------------------------
+// 2. Business Knowledge Base & Grounding Facts
+// -------------------------------------------------------------
+
+model BusinessProfile {
+  id           String   @id @default(cuid())
+  tenantId     String   @unique
+  industry     String
+  location     String   @default("Kuala Lumpur, Malaysia")
+  website      String?
+  contactEmail String?
+  phone        String?
+  summary      String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  tenantId        String
+  name            String
+  category        String
+  description     String
+  price           String?
+  features        String   @default("[]") // JSON array
+  benefits        String   @default("[]") // JSON array
+  differentiators String   @default("[]") // JSON array
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tenant Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  usps   ProductUSP[]
+  posts  ContentPost[]
+}
+
+model ProductUSP {
+  id          String   @id @default(cuid())
+  productId   String
+  title       String
+  description String
+  proofPoint  String
+  isVerified  Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model AudiencePersona {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  name               String
+  ageRange           String?
+  painPoints         String   @default("[]") // JSON array
+  motivations        String   @default("[]") // JSON array
+  preferredPlatforms String   @default("[]") // JSON array
+  preferredLanguages String   @default("[]") // JSON array
+  createdAt          DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model BrandVoiceProfile {
+  id                   String   @id @default(cuid())
+  tenantId             String   @unique
+  tone                 String
+  personalityTraits    String   @default("[]") // JSON array
+  wordsToUse           String   @default("[]") // JSON array
+  wordsToAvoid         String   @default("[]") // JSON array
+  mixedLanguageAllowed Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model BrandAsset {
+  id        String   @id @default(cuid())
+  tenantId  String
+  name      String
+  type      String   // LOGO, COLOR_PALETTE, TYPOGRAPHY, PRODUCT_IMAGE, TEMPLATE
+  url       String
+  meta      String?  // JSON details (e.g. hex codes, aspect ratio)
+  createdAt DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model KnowledgeDocument {
+  id               String   @id @default(cuid())
+  tenantId         String
+  title            String
+  fileType         String   // PDF, DOCX, TXT, CSV
+  rawContent       String
+  sourceUrl        String?
+  processingStatus String   @default("PROCESSED") // PENDING, PROCESSED, FAILED
+  createdAt        DateTime @default(now())
+
+  tenant Tenant          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  facts  KnowledgeFact[]
+}
+
+model KnowledgeFact {
+  id                 String    @id @default(cuid())
+  documentId         String?
+  tenantId           String
+  claim              String
+  category           String    // Pricing, Ingredient, Certification, Policy, Award
+  verificationStatus String    @default("VERIFIED") // VERIFIED, UNVERIFIED_NEEDS_PROOF, EXPIRED
+  verifiedByUserId   String?
+  verifiedAt         DateTime?
+  expiresAt          DateTime?
+  createdAt          DateTime  @default(now())
+
+  tenant   Tenant             @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  document KnowledgeDocument? @relation(fields: [documentId], references: [id], onDelete: SetNull)
+}
+
+model ApprovedClaim {
+  id             String   @id @default(cuid())
+  tenantId       String
+  claim          String
+  evidence       String
+  allowedPillars String   @default("[]") // JSON array
+  createdAt      DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model RestrictedTopic {
+  id        String   @id @default(cuid())
+  tenantId  String
+  topic     String
+  reason    String
+  severity  String   @default("HARD_BLOCK") // HARD_BLOCK, REQUIRE_MANUAL_REVIEW
+  createdAt DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+// -------------------------------------------------------------
+// 3. Social Connectors & Trend Radar
+// -------------------------------------------------------------
+
+model SocialAccount {
+  id                  String    @id @default(cuid())
+  tenantId            String
+  platform            String    // TIKTOK, THREADS, INSTAGRAM, FACEBOOK
+  accountName         String
+  externalAccountId   String
+  encryptedAccessToken String
+  tokenExpiresAt      DateTime?
+  autoPostEnabled     Boolean   @default(false)
+  status              String    @default("CONNECTED") // CONNECTED, EXPIRED, DISCONNECTED, PAUSED
+  createdAt           DateTime  @default(now())
+
+  tenant         Tenant          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  publishingJobs PublishingJob[]
+}
+
+model PlatformCapability {
+  id                         String  @id @default(cuid())
+  platform                   String  @unique // TIKTOK, THREADS, INSTAGRAM, FACEBOOK
+  supportsTrends             Boolean @default(false)
+  supportsPublishing         Boolean @default(true)
+  supportsScheduledPublishing Boolean @default(true)
+  supportsAnalytics          Boolean @default(true)
+  tier                       String  @default("OFFICIAL_GRAPH_API") // OFFICIAL_GRAPH_API, RESEARCH_API, MOCK_DEMO
+}
+
+model TrendSource {
+  id          String    @id @default(cuid())
+  name        String
+  sourceType  String    @default("OFFICIAL_API") // OFFICIAL_API, LICENSED_LISTENING, MANUAL_IMPORT, DEMO_SIMULATOR
+  status      String    @default("ACTIVE") // ACTIVE, DEGRADED, OFFLINE
+  lastPolledAt DateTime?
+
+  trendSignals TrendSignal[]
+}
+
+model TrendSignal {
+  id                String   @id @default(cuid())
+  tenantId          String
+  sourceId          String?
+  platform          String   // TIKTOK, THREADS, INSTAGRAM, FACEBOOK, CROSS_PLATFORM
+  externalTrendId   String?
+  title             String
+  summary           String
+  category          String   // EMERGING_TOPIC, POPULAR_FORMAT, HASHTAG_KEYWORD, SEASONAL_MOMENT, AUDIENCE_QUESTION, INDUSTRY_NEWS
+  firstObservedAt   DateTime
+  lastObservedAt    DateTime
+  sourceUrl         String?
+  engagementMetrics String   @default("{}") // JSON string of likes, shares, growth rate
+  isExcluded        Boolean  @default(false)
+  exclusionReason   String?
+  safetyStatus      String   @default("PASS") // PASS, MANUAL_REVIEW_REQUIRED, BLOCKED
+  safetyNotes       String?
+  createdAt         DateTime @default(now())
+
+  tenant       Tenant          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  source       TrendSource?    @relation(fields: [sourceId], references: [id], onDelete: SetNull)
+  snapshots    TrendSnapshot[]
+  scores       TrendScore[]
+  contentIdeas ContentIdea[]
+  contentPosts ContentPost[]
+}
+
+model TrendSnapshot {
+  id            String   @id @default(cuid())
+  trendSignalId String
+  snapshotTime  DateTime @default(now())
+  velocityScore Float    @default(0.0)
+  rawMetrics    String   @default("{}")
+
+  trendSignal TrendSignal @relation(fields: [trendSignalId], references: [id], onDelete: Cascade)
+}
+
+model TrendScore {
+  id                     String   @id @default(cuid())
+  trendSignalId          String
+  tenantId               String
+  recencyScore           Float    @default(0.0)
+  momentumScore          Float    @default(0.0)
+  businessRelevanceScore Float    @default(0.0)
+  audienceFitScore       Float    @default(0.0)
+  platformFitScore       Float    @default(0.0)
+  brandFitScore          Float    @default(0.0)
+  commercialUsefulnessScore Float @default(0.0)
+  compositeScore         Float    @default(0.0)
+  explanation            String
+  matchedProductIds      String   @default("[]") // JSON array
+  matchedUSPIds          String   @default("[]") // JSON array
+  suggestedAngle         String
+  calculatedAt           DateTime @default(now())
+
+  trendSignal TrendSignal @relation(fields: [trendSignalId], references: [id], onDelete: Cascade)
+  tenant      Tenant      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+// -------------------------------------------------------------
+// 4. Content Studio & Generation Engine
+// -------------------------------------------------------------
+
+model ContentPillar {
+  id               String   @id @default(cuid())
+  tenantId         String
+  name             String
+  targetPercentage Int      @default(25)
+  description      String
+
+  tenant Tenant        @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  ideas  ContentIdea[]
+  posts  ContentPost[]
+}
+
+model ContentIdea {
+  id             String   @id @default(cuid())
+  tenantId       String
+  trendSignalId  String?
+  pillarId       String?
+  conceptType    String   // EDUCATIONAL, PROBLEM_SOLUTION, MYTH_VS_FACT, FAQ_OBJECTION, BEHIND_SCENES, STORYTELLING, SHORT_VIDEO_SCRIPT, PROMOTIONAL
+  title          String
+  objective      String
+  targetAudience String
+  openingHook    String
+  status         String   @default("DRAFT") // DRAFT, ACCEPTED, REJECTED
+  createdAt      DateTime @default(now())
+
+  tenant      Tenant         @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  trendSignal TrendSignal?   @relation(fields: [trendSignalId], references: [id], onDelete: SetNull)
+  pillar      ContentPillar? @relation(fields: [pillarId], references: [id], onDelete: SetNull)
+  posts       ContentPost[]
+}
+
+model ContentPost {
+  id              String    @id @default(cuid())
+  tenantId        String
+  ideaId          String?
+  trendSignalId   String?
+  productId       String?
+  pillarId        String?
+  title           String
+  masterHook      String
+  masterCaption   String
+  masterCta       String
+  visualBrief     String
+  safetyOutcome   String    @default("PASS") // PASS, MANUAL_REVIEW, BLOCKED
+  safetyNotes     String?
+  lifecycleStatus String    @default("DRAFT") // IDEA, FORECAST, DRAFT, NEEDS_REVIEW, APPROVED, SCHEDULED, PUBLISHING, PUBLISHED, FAILED, ON_HOLD, REPLACEMENT_PROPOSED, DELETED
+  scheduledFor    DateTime?
+  publishedAt     DateTime?
+  isDeleted       Boolean   @default(false)
+  deletedAt       DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  tenant            Tenant               @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  idea              ContentIdea?         @relation(fields: [ideaId], references: [id], onDelete: SetNull)
+  trendSignal       TrendSignal?         @relation(fields: [trendSignalId], references: [id], onDelete: SetNull)
+  product           Product?             @relation(fields: [productId], references: [id], onDelete: SetNull)
+  pillar            ContentPillar?       @relation(fields: [pillarId], references: [id], onDelete: SetNull)
+  variants          ContentVariant[]
+  mediaAssets       MediaAsset[]
+  versions          ContentVersion[]
+  calendarSlots     CalendarSlot[]
+  approvals         Approval[]
+  deletionFeedbacks DeletionFeedback[]
+  publishingJobs    PublishingJob[]
+  metricSnapshots   PostMetricSnapshot[]
+}
+
+model ContentVariant {
+  id                    String  @id @default(cuid())
+  postId                String
+  platform              String  // TIKTOK, THREADS, INSTAGRAM, FACEBOOK
+  caption               String
+  hook                  String
+  callToAction          String
+  hashtags              String  @default("[]") // JSON array
+  aspectRatio           String  @default("1:1") // 9:16, 1:1, 4:5, 16:9
+  characterCount        Int     @default(0)
+  platformSpecificNotes String?
+
+  post ContentPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model MediaAsset {
+  id          String   @id @default(cuid())
+  tenantId    String
+  postId      String?
+  url         String
+  prompt      String?
+  provider    String   @default("MockAI Visual Studio")
+  aspectRatio String   @default("1:1")
+  version     Int      @default(1)
+  createdAt   DateTime @default(now())
+
+  tenant Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  post   ContentPost? @relation(fields: [postId], references: [id], onDelete: SetNull)
+}
+
+model ContentVersion {
+  id              String   @id @default(cuid())
+  postId          String
+  versionNumber   Int
+  captionSnapshot String
+  hookSnapshot    String
+  changedByUserId String?
+  changeReason    String?
+  createdAt       DateTime @default(now())
+
+  post ContentPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+// -------------------------------------------------------------
+// 5. Calendar, Approvals & Deletion Learning
+// -------------------------------------------------------------
+
+model CalendarSlot {
+  id                       String   @id @default(cuid())
+  tenantId                 String
+  postId                   String?
+  targetDate               DateTime
+  slotTime                 String   @default("11:00") // e.g. "11:00"
+  platform                 String   @default("INSTAGRAM") // TIKTOK, THREADS, INSTAGRAM, FACEBOOK
+  isForecast               Boolean  @default(true)
+  hasReplacementProposal   Boolean  @default(false)
+  proposedReplacementPostId String?
+  replacementReason        String?
+
+  tenant Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  post   ContentPost? @relation(fields: [postId], references: [id], onDelete: SetNull)
+}
+
+model Approval {
+  id           String   @id @default(cuid())
+  postId       String
+  userId       String
+  approvalType String   @default("MANUAL_ADMIN") // MANUAL_ADMIN, SYSTEM_AUTOPOST
+  notes        String?
+  decidedAt    DateTime @default(now())
+
+  post ContentPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model DeletionFeedback {
+  id             String   @id @default(cuid())
+  tenantId       String
+  postId         String
+  reasonCategory String   // NOT_RELEVANT, TREND_OUTDATED, WRONG_AUDIENCE, VOICE_MISMATCH, WEAK_COPY, UNSUITABLE_VISUAL, INACCURATE_FACTS, TOO_PROMOTIONAL, SENSITIVE_TOPIC, OFFER_CHANGED, OTHER
+  reasonDetails  String?
+  improvementText String?
+  rejectedPillarId String?
+  rejectedFormat String?
+  userId         String
+  createdAt      DateTime @default(now())
+
+  tenant Tenant      @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  post   ContentPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model LearningPreference {
+  id               String   @id @default(cuid())
+  tenantId         String
+  preferenceKey    String   // e.g. "affinity_pillar_educational", "avoid_format_meme", "tone_weight_playful"
+  weight           Float    @default(1.0) // 0.0 to 2.0
+  confidence       Float    @default(0.5) // 0.0 to 1.0
+  sampleCount      Int      @default(0)
+  lastAdjustedAt   DateTime @default(now())
+  isUserOverridden Boolean  @default(false)
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, preferenceKey])
+}
+
+// -------------------------------------------------------------
+// 6. Publishing Jobs & Analytics
+// -------------------------------------------------------------
+
+model PublishingJob {
+  id                 String   @id @default(cuid())
+  tenantId           String
+  postId             String
+  socialAccountId    String
+  idempotencyKey     String   @unique
+  scheduledPublishAt DateTime
+  status             String   @default("PENDING") // PENDING, PROCESSING, PUBLISHED, FAILED, CANCELLED
+  retryCount         Int      @default(0)
+  maxRetries         Int      @default(3)
+  lastError          String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  tenant        Tenant              @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  post          ContentPost         @relation(fields: [postId], references: [id], onDelete: Cascade)
+  socialAccount SocialAccount       @relation(fields: [socialAccountId], references: [id], onDelete: Cascade)
+  attempts      PublishingAttempt[]
+}
+
+model PublishingAttempt {
+  id              String   @id @default(cuid())
+  publishingJobId String
+  attemptedAt     DateTime @default(now())
+  externalPostId  String?
+  responsePayload String?  // JSON string
+  isSuccess       Boolean  @default(false)
+  errorMessage    String?
+
+  job PublishingJob @relation(fields: [publishingJobId], references: [id], onDelete: Cascade)
+}
+
+model PostMetricSnapshot {
+  id           String   @id @default(cuid())
+  postId       String
+  snapshotDate DateTime @default(now())
+  impressions  Int      @default(0)
+  reach        Int      @default(0)
+  likes        Int      @default(0)
+  shares       Int      @default(0)
+  comments     Int      @default(0)
+  saves        Int      @default(0)
+  isSimulated  Boolean  @default(false)
+
+  post ContentPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String?
+  title     String
+  message   String
+  type      String   // HIGH_RELEVANCE_TREND, POST_AWAITING_REVIEW, REPLACEMENT_PROPOSAL, PUBLISHING_SUCCESS, PUBLISHING_FAILED, SAFETY_ALERT
+  isRead    Boolean  @default(false)
+  actionUrl String?
+  createdAt DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+model AIUsageRecord {
+  id               String   @id @default(cuid())
+  tenantId         String
+  model            String   // gemini-2.0-flash, gemini-1.5-pro, mock-engine
+  operation        String   // CONCEPT_GEN, COPY_ADAPT, FACT_EXTRACTION, MODERATION, IMAGE_GEN
+  promptTokens     Int      @default(0)
+  completionTokens Int      @default(0)
+  costUsd          Float?
+  createdAt        DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
