@@ -13,21 +13,22 @@ import {
   Lock,
   Clock,
   RefreshCw,
-  ExternalLink,
+  Send,
 } from "lucide-react";
+import { PlatformType } from "@/lib/types";
 
 export default function PublishingPage() {
   const [autoPostEnabled, setAutoPostEnabled] = useState(false);
   const [isPausedAll, setIsPausedAll] = useState(false);
-  const [maxDailyPosts, setMaxDailyPosts] = useState(3);
-  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+  const [publishingLoading, setPublishingLoading] = useState(false);
+  const [dispatchResult, setDispatchResult] = useState<{ success: boolean; message: string } | null>(null);
 
   const handleToggleAutoPost = () => {
-    // Check 14-day probation
+    // 14-day probation check
     const isProbation = true;
     if (isProbation && !autoPostEnabled) {
       alert(
-        "Auto-Post Blocked: Your tenant is currently in the initial 14-day learning probation period (Day 2 of 14). Manual approval is required to verify brand tone and accuracy before autonomous posting can be activated."
+        "Auto-Post Blocked: Your tenant is currently in the mandatory 14-day learning probation period (Day 2 of 14). Manual approval is required to verify brand tone and accuracy before autonomous posting can be activated."
       );
       return;
     }
@@ -36,12 +37,42 @@ export default function PublishingPage() {
 
   const handleEmergencyPause = () => {
     setIsPausedAll(!isPausedAll);
-    setStatusMessage(
-      isPausedAll
+    setDispatchResult({
+      success: !isPausedAll,
+      message: isPausedAll
         ? "Emergency pause lifted. Scheduled publishing resumed."
-        : "EMERGENCY PAUSE ACTIVATED: All scheduled post dispatches have been immediately halted."
-    );
-    setTimeout(() => setStatusMessage(null), 5000);
+        : "EMERGENCY PAUSE ACTIVATED: All scheduled post dispatches have been immediately halted.",
+    });
+    setTimeout(() => setDispatchResult(null), 5000);
+  };
+
+  const handleTestPublish = async (platform: PlatformType) => {
+    setPublishingLoading(true);
+    setDispatchResult(null);
+    try {
+      const res = await fetch("/api/posts/post_1/publish", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ platform, approvalType: "MANUAL_ADMIN" }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setDispatchResult({
+          success: true,
+          message: `Dispatched to ${platform}! External Post ID: ${data.externalPostId}`,
+        });
+      } else {
+        setDispatchResult({
+          success: false,
+          message: data.error || "Publishing dispatch failed",
+        });
+      }
+    } catch (e: any) {
+      setDispatchResult({ success: false, message: e.message });
+    } finally {
+      setPublishingLoading(false);
+      setTimeout(() => setDispatchResult(null), 6000);
+    }
   };
 
   return (
@@ -52,16 +83,20 @@ export default function PublishingPage() {
       />
 
       <div className="p-8 space-y-6 max-w-7xl">
-        {statusMessage && (
+        {dispatchResult && (
           <div
             className={`p-4 rounded-xl text-xs font-semibold flex items-center gap-3 animate-in fade-in ${
-              isPausedAll
-                ? "bg-rose-950 border border-rose-800 text-rose-200"
-                : "bg-emerald-950 border border-emerald-800 text-emerald-200"
+              dispatchResult.success
+                ? "bg-emerald-950 border border-emerald-800 text-emerald-200"
+                : "bg-rose-950 border border-rose-800 text-rose-200"
             }`}
           >
-            <AlertTriangle className="w-4 h-4 shrink-0" />
-            <span>{statusMessage}</span>
+            {dispatchResult.success ? (
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            ) : (
+              <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
+            )}
+            <span>{dispatchResult.message}</span>
           </div>
         )}
 
@@ -93,36 +128,36 @@ export default function PublishingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
+              platformKey: "INSTAGRAM" as PlatformType,
               platform: "Instagram Business",
               accountName: "@kopicraft.my",
               status: "CONNECTED",
               tier: "Official Graph API (Content Publishing)",
               expiresIn: "58 days",
-              autoPost: false,
             },
             {
+              platformKey: "TIKTOK" as PlatformType,
               platform: "TikTok Creator",
               accountName: "@kopicraft.official",
               status: "CONNECTED",
               tier: "TikTok Content Posting API (Direct Post)",
               expiresIn: "84 days",
-              autoPost: false,
             },
             {
+              platformKey: "THREADS" as PlatformType,
               platform: "Threads",
               accountName: "@kopicraft.my",
               status: "CONNECTED",
               tier: "Official Threads Graph API",
               expiresIn: "58 days",
-              autoPost: false,
             },
             {
+              platformKey: "FACEBOOK" as PlatformType,
               platform: "Facebook Page",
               accountName: "KopiCraft Malaysia",
               status: "CONNECTED",
               tier: "Meta Pages API (Page Publishing)",
               expiresIn: "60 days",
-              autoPost: false,
             },
           ].map((acc, i) => (
             <div key={i} className="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
@@ -146,9 +181,13 @@ export default function PublishingPage() {
               </div>
 
               <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
-                <button className="text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1">
-                  <RefreshCw className="w-3 h-3" />
-                  <span>Refresh Token</span>
+                <button
+                  disabled={publishingLoading}
+                  onClick={() => handleTestPublish(acc.platformKey)}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/25 text-xs font-semibold transition-colors disabled:opacity-50"
+                >
+                  <Send className="w-3 h-3" />
+                  <span>Test Publish Post</span>
                 </button>
                 <button className="text-xs font-semibold text-rose-400 hover:text-rose-300">Disconnect</button>
               </div>

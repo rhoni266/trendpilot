@@ -16,6 +16,8 @@ import {
   ArrowRight,
   Eye,
   Edit,
+  Check,
+  RefreshCw,
 } from "lucide-react";
 
 export default function CalendarPage() {
@@ -24,81 +26,44 @@ export default function CalendarPage() {
   const [selectedPostForDeletion, setSelectedPostForDeletion] = useState<ContentPost | null>(null);
   const [viewMode, setViewMode] = useState<"MONTH" | "LIST">("MONTH");
   const [platformFilter, setPlatformFilter] = useState<string>("ALL");
+  const [loading, setLoading] = useState<boolean>(true);
+  const [statusNotice, setStatusNotice] = useState<string | null>(null);
+
+  const fetchCalendar = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/calendar");
+      const data = await res.json();
+      if (data.slots) {
+        setSlots(data.slots);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    // Generate 30 slots client-side or read from db
-    const now = new Date();
-    const generated: CalendarSlot[] = [];
-
-    for (let i = 0; i < 30; i++) {
-      const d = new Date(now.getTime() + i * 24 * 3600 * 1000);
-      const dateStr = d.toISOString().split("T")[0];
-      const isApproved = i === 1 || i === 2;
-      const isReplacement = i === 4;
-
-      const pTitle = i === 0 
-        ? "Behind the Roaster: Kulai Liberica Drop Day"
-        : i === 1 
-        ? "Calamansi Cold Brew Fizz Recipe"
-        : i === 2
-        ? "Mythbuster: Does Dark Roast Have More Kick?"
-        : i === 4
-        ? "The Rise of Rare Liberica in Global Coffee Competitions"
-        : `Artisan Coffee Moment #${i + 1}`;
-
-      const post: ContentPost = {
-        id: `post_${i}`,
-        tenantId: "tenant_kopicraft_01",
-        title: pTitle,
-        masterHook: "Cuaca panas KL ni, jangan minum kopi biasa yang pekat melekit. Try this 2-minute mocktail!",
-        masterCaption: "When it's 34°C in Bangsar, our 18-Hour Barista Cold Brew Concentrate + sparkling tonic + fresh calamansi is the ultimate afternoon revival.",
-        masterCta: "Link in bio to reserve this week's fresh batch.",
-        visualBrief: "Clean studio top-down shot of condensation-covered glass with calamansi slice.",
-        safetyOutcome: "PASS",
-        lifecycleStatus: isApproved ? "APPROVED" : isReplacement ? "REPLACEMENT_PROPOSED" : "FORECAST",
-        isDeleted: false,
-        variants: [],
-        mediaAssets: [],
-        createdAt: now.toISOString(),
-        updatedAt: now.toISOString(),
-      };
-
-      generated.push({
-        id: `slot_${i}`,
-        tenantId: "tenant_kopicraft_01",
-        targetDate: dateStr,
-        slotTime: "11:30",
-        platform: i % 2 === 0 ? "INSTAGRAM" : "TIKTOK",
-        isForecast: !isApproved,
-        hasReplacementProposal: isReplacement,
-        proposedReplacementPostId: isReplacement ? "post_replacement_demo" : undefined,
-        proposedReplacementPost: isReplacement
-          ? {
-              id: "post_replacement_demo",
-              tenantId: "tenant_kopicraft_01",
-              title: "⚡ Trend Replacement: Tropical Cold Brew Spritz for 34°C Heatwave",
-              masterHook: "Cuaca panas terik harini? Jump into the viral Cold Brew Calamansi Spritz trend!",
-              masterCaption: "Captured right from this week's trending #coldbrewmocktail wave (+82% momentum). We pair our 18-hour cold steeped concentrate with sparkling water and fresh calamansi.",
-              masterCta: "Limited stock of this week's cold brew batch available online now.",
-              visualBrief: "Bright, sunlit aesthetic of glass tumbler with effervescent bubbles, floating calamansi wheels.",
-              safetyOutcome: "PASS",
-              lifecycleStatus: "REPLACEMENT_PROPOSED",
-              isDeleted: false,
-              variants: [],
-              mediaAssets: [],
-              createdAt: now.toISOString(),
-              updatedAt: now.toISOString(),
-            }
-          : undefined,
-        replacementReason: isReplacement
-          ? "New 7-Day Trend: Rapid spike (+82%) in tropical cold brew recipes. Proposing to replace generic bean forecast with high-momentum Cold Brew Mocktail post to capture immediate seasonal demand."
-          : undefined,
-        post,
-      });
-    }
-
-    setSlots(generated);
+    fetchCalendar();
   }, []);
+
+  const handleApproveSlot = async (slotId: string) => {
+    try {
+      const res = await fetch("/api/calendar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ slotId, action: "APPROVE" }),
+      });
+      if (res.ok) {
+        setStatusNotice("Post successfully approved and locked on calendar.");
+        fetchCalendar();
+        setTimeout(() => setStatusNotice(null), 3000);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const filteredSlots = slots.filter((slot) => {
     if (platformFilter !== "ALL" && slot.platform !== platformFilter) return false;
@@ -110,9 +75,17 @@ export default function CalendarPage() {
       <Header
         title="30-Day Rolling Content Forecast"
         subtitle="Dynamic 30-Day Calendar with Adaptive 7-Day Trend Re-evaluation & Zero Unauthorised Overwrites"
+        onScanSuccess={fetchCalendar}
       />
 
       <div className="p-8 space-y-6 max-w-7xl">
+        {statusNotice && (
+          <div className="p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-800 text-xs text-emerald-200 flex items-center gap-2 animate-in fade-in">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>{statusNotice}</span>
+          </div>
+        )}
+
         {/* Calendar Legend & Filter Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
           <div className="flex flex-wrap items-center gap-3">
@@ -162,13 +135,18 @@ export default function CalendarPage() {
             </div>
             <div className="flex items-center gap-1.5">
               <div className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-amber-300 font-semibold">Review Suggested (+20% Trend)</span>
+              <span className="text-amber-300 font-semibold">Review Suggested (+15% Trend)</span>
             </div>
           </div>
         </div>
 
-        {/* 30-Day Grid View */}
-        {viewMode === "MONTH" ? (
+        {loading ? (
+          <div className="p-16 text-center rounded-2xl bg-slate-900/40 border border-slate-800 space-y-2">
+            <RefreshCw className="w-6 h-6 text-cyan-400 animate-spin mx-auto" />
+            <p className="text-xs text-slate-400">Synchronizing rolling 30-day forecast slots...</p>
+          </div>
+        ) : viewMode === "MONTH" ? (
+          /* 30-Day Grid View */
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {filteredSlots.map((slot) => {
               const isApproved = !slot.isForecast;
@@ -204,10 +182,10 @@ export default function CalendarPage() {
                   {/* Post Content */}
                   <div className="space-y-1">
                     <p className="font-semibold text-white text-xs line-clamp-2 leading-snug">
-                      {slot.post?.title}
+                      {slot.post?.title ?? "Adaptive Forecast Slot"}
                     </p>
                     <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
-                      "{slot.post?.masterHook}"
+                      "{slot.post?.masterHook ?? "Awaiting 7-day trend signal assignment..."}"
                     </p>
                   </div>
 
@@ -229,11 +207,20 @@ export default function CalendarPage() {
                     </div>
                   )}
 
-                  {/* Footer Meta */}
+                  {/* Footer Meta & Actions */}
                   <div className="pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-500 font-mono">
                     <span>{slot.platform}</span>
                     <div className="flex items-center gap-2">
                       <span>{slot.slotTime}</span>
+                      {slot.post && slot.isForecast && !hasProposal && (
+                        <button
+                          onClick={() => handleApproveSlot(slot.id)}
+                          className="text-emerald-400 hover:text-emerald-300 transition-colors"
+                          title="Approve & Lock slot"
+                        >
+                          <Check className="w-3.5 h-3.5" />
+                        </button>
+                      )}
                       {slot.post && (
                         <button
                           onClick={() => setSelectedPostForDeletion(slot.post!)}
@@ -266,7 +253,7 @@ export default function CalendarPage() {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-bold text-white truncate">{slot.post?.title}</p>
+                  <p className="text-xs font-bold text-white truncate">{slot.post?.title ?? "Empty Slot"}</p>
                   <p className="text-[11px] text-slate-400 truncate">{slot.post?.masterHook}</p>
                 </div>
 
@@ -279,8 +266,15 @@ export default function CalendarPage() {
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>Compare Trend Proposal</span>
                     </button>
+                  ) : slot.post && slot.isForecast ? (
+                    <button
+                      onClick={() => handleApproveSlot(slot.id)}
+                      className="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs"
+                    >
+                      Approve
+                    </button>
                   ) : (
-                    <span className="text-[11px] font-mono text-slate-500">
+                    <span className="text-[11px] font-mono text-emerald-400 font-semibold">
                       {slot.isForecast ? "FORECAST" : "APPROVED"}
                     </span>
                   )}
@@ -297,16 +291,7 @@ export default function CalendarPage() {
           slot={selectedSlotForReplacement}
           isOpen={true}
           onClose={() => setSelectedSlotForReplacement(null)}
-          onActionComplete={() => {
-            // Update slots
-            setSlots((prev) =>
-              prev.map((s) =>
-                s.id === selectedSlotForReplacement.id
-                  ? { ...s, hasReplacementProposal: false, isForecast: false }
-                  : s
-              )
-            );
-          }}
+          onActionComplete={fetchCalendar}
         />
       )}
 
@@ -316,11 +301,7 @@ export default function CalendarPage() {
           post={selectedPostForDeletion}
           isOpen={true}
           onClose={() => setSelectedPostForDeletion(null)}
-          onDeleted={() => {
-            setSlots((prev) =>
-              prev.map((s) => (s.post?.id === selectedPostForDeletion.id ? { ...s, post: undefined } : s))
-            );
-          }}
+          onDeleted={fetchCalendar}
         />
       )}
     </div>

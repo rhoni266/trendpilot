@@ -1921,6 +1921,23 @@
       "createdAt": "2026-11-17T13:32:00.016Z",
       "updatedAt": "2026-11-17T13:32:00.016Z",
       "deletedAt": "2026-11-17T13:32:00.020Z"
+    },
+    {
+      "tenantId": "tenant_kopicraft_01",
+      "title": "Hard-Sell Special Discount Promo",
+      "masterHook": "Get 50% off right now!",
+      "masterCaption": "Limited time discount on our coffee beans.",
+      "masterCta": "Buy now before it's gone!",
+      "visualBrief": "Big discount badge over coffee bag.",
+      "safetyOutcome": "PASS",
+      "lifecycleStatus": "DELETED",
+      "isDeleted": true,
+      "id": "post_1794922857965",
+      "variants": [],
+      "mediaAssets": [],
+      "createdAt": "2026-11-17T13:40:57.965Z",
+      "updatedAt": "2026-11-17T13:40:57.965Z",
+      "deletedAt": "2026-11-17T13:40:57.969Z"
     }
   ],
   "contentVariants": [
@@ -3015,6 +3032,16 @@
       "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
       "userId": "user_owner_01",
       "createdAt": "2026-11-17T13:32:00.020Z"
+    },
+    {
+      "id": "del_fb_1794922857969",
+      "tenantId": "tenant_kopicraft_01",
+      "postId": "post_1794922857965",
+      "reasonCategory": "TOO_PROMOTIONAL",
+      "reasonDetails": "Too salesy, doesn't match our craft artisan positioning.",
+      "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+      "userId": "user_owner_01",
+      "createdAt": "2026-11-17T13:40:57.969Z"
     }
   ],
   "learningPreferences": [
@@ -3042,10 +3069,10 @@
       "id": "pref_03",
       "tenantId": "tenant_kopicraft_01",
       "preferenceKey": "avoid_format_aggressive_discount",
-      "weight": 1,
+      "weight": 1.15,
       "confidence": 0.9,
-      "sampleCount": 10,
-      "lastAdjustedAt": "2026-11-17T13:32:00.020Z",
+      "sampleCount": 11,
+      "lastAdjustedAt": "2026-11-17T13:40:57.969Z",
       "isUserOverridden": true
     }
   ],
@@ -3153,6 +3180,20 @@
         "postTitle": "Hard-Sell Special Discount Promo"
       },
       "createdAt": "2026-11-17T13:32:00.020Z"
+    },
+    {
+      "id": "audit_1794922857969",
+      "tenantId": "tenant_kopicraft_01",
+      "userId": "user_owner_01",
+      "action": "POST_DELETED_WITH_FEEDBACK",
+      "entityType": "ContentPost",
+      "entityId": "post_1794922857965",
+      "details": {
+        "reasonCategory": "TOO_PROMOTIONAL",
+        "improvementText": "Highlight the Kulai farming story rather than pure discounts.",
+        "postTitle": "Hard-Sell Special Discount Promo"
+      },
+      "createdAt": "2026-11-17T13:40:57.969Z"
     }
   ]
 }

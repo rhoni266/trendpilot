@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import {
   Flame,
@@ -17,6 +17,27 @@ import {
 } from "lucide-react";
 
 export default function AnalyticsPage() {
+  const [downloading, setDownloading] = useState(false);
+
+  const handleExport = async () => {
+    setDownloading(true);
+    try {
+      const res = await fetch("/api/analytics/export");
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `trendpilot-marketing-report-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setDownloading(false);
+    }
+  };
+
   return (
     <div className="flex-1 flex flex-col pb-12">
       <Header
@@ -25,6 +46,25 @@ export default function AnalyticsPage() {
       />
 
       <div className="p-8 space-y-8 max-w-7xl">
+        {/* Export Banner */}
+        <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 className="text-sm font-bold text-white">Export Tenant Performance Report</h3>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Download complete structured JSON/CSV report of metrics, pillar performance, and learned preference weights.
+            </p>
+          </div>
+
+          <button
+            onClick={handleExport}
+            disabled={downloading}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-colors shadow-sm disabled:opacity-50"
+          >
+            <Download className="w-4 h-4" />
+            <span>{downloading ? "Generating Report..." : "Export Report (JSON)"}</span>
+          </button>
+        </div>
+
         {/* Top Metric Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-5 rounded-2xl bg-slate-900 border border-slate-800 space-y-2">
